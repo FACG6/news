@@ -1,5 +1,10 @@
+const searchInput =document.getElementById("search");
+const lang =document.getElementById("lang");
+const category=document.getElementById("cate");
 
-var url = "https://newsapi.org/v2/everything?q=Apple&from=2019-01-22&sortBy=popularity&apiKey=20c56b22de144ba0b71294e40745723f";
+const url=`https://newsapi.org/v2/top-headlines?q=${searchInput.value}&language=${lang}&category=${category}&apiKey=cf55683a37b348acb635772cba756300`;
+
+
 
 var x = document.getElementById("images");
 var image  = document.createElement("img");
