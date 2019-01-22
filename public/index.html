@@ -1,19 +1,36 @@
-<<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html>
+  <html>
+
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>News Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-</head>
-<body>
+  </head>
+
+  <body>
+
+    <div class="slideShow" id="slideshow">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 2</div>
+          <img class="image" src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+          <div class="description">Image 1</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 2</div>
+          <img class="image" src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+          <div class="description">Image 2</div>
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 
 
-    
-    <script src="js/logic.js"></script>
-    <script src="js/dom.js"></script>
-    <script src="js/test.js"></script>
-</body>
-</html>
+      <script src="js/logic.js"></script>
+      <script src="js/dom.js"></script>
+  </body>
+
+  </html>
