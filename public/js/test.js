@@ -36,60 +36,41 @@ const response = {
 
 
 
-test('test fechAPI function', function(t) {
+test('test getImage function', (test)=> {
 
   let actual = logic.getImage(response, 0);
     let expected = "https://www.newsbtc.com/wp-content/uploads/2019/01/bithumb2.jpg";
-    t.equal(actual, expected, "the image not the same ");
-    t.end();
+    test.equal(actual, expected, "the image not the same ");
+    test.end();
 });
 
-test('test fechAPI function', function(t) {
+test('test getPostUrl function', (t)=> {
 
   let actual = logic.getPostUrl(response, 1);
     let expected = "https://www.be-it.co.uk/blog-news/view/5464/how-blockchain-technology-could-benefit-the-marketing-world.aspx";
-    t.equal(actual, expected, "the image not the same ");
+    t.equal(actual, expected, "the url not the same ");
     t.end();
 });
- 
-test('test fechAPI function', function(t) {
-
-  let actual = logic.getSourceId(response, 0);
-    let expected = null;
-    t.equal(actual, expected, "the image not the same ");
-    t.end();
-});
-
- 
-test('test fechAPI function', function(t) {
-
-  let actual = logic.getAuthor(response, 0);
-    let expected = "Martin Young";
-    t.equal(actual, expected, "the image not the same ");
-    t.end();
-});
-
-
-test('test fechAPI function', function(t) {
+  
+test('test getTitel function',(t)=> {
 
   let actual = logic.getTitel(response, 0);
     let expected = "Would Crypto Markets React if Bithumb Went Public in The US?";
-    t.equal(actual, expected, "the image not the same ");
+    t.equal(actual, expected, "the Titele not the same ");
     t.end();
 });
 
-test('test fechAPI function', function(t) {
+test('test getContent function', (t)=> {
 
   let actual = logic.getContent(response, 0);
     let expected = "One of the worlds largest crypto exchanges could soon be publicly traded in the US through a reverse merger. A Singapore based holdings company which has a majority stake in one of Koreas top exchanges is looking to get listed by acquiring an already publicly… [+2203 chars]";
-    t.equal(actual, expected, "the image not the same ");
+    t.equal(actual, expected, "the Contentnot the same ");
     t.end();
 });
 
-test('test fechAPI function', function(t) {
-
+test('test publishAt function', (t)=> {
   let actual = logic.publishAt(response, 0);
     let expected = "2019-01-23T09:00:44Z";
-    t.equal(actual, expected, "the image not the same ");
+    t.equal(actual, expected, "the publishAt not the same ");
     t.end();
 });
