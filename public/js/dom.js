@@ -74,7 +74,11 @@ submit.addEventListener('click', function(e) {
       /*button to show details*/
       button = document.createElement('button');
       button.innerText = "Show Details";
-      slideShowDiv.appendChild(button);
+      let divButton=document.createElement('div');
+      divButton.classList.add('more_Detalis');
+      slideShowDiv.appendChild(divButton);
+      button.classList.add("btn_more_Detalis");
+      divButton.appendChild(button);
       button.setAttribute('id',i);
       button.addEventListener('click',function(e){
         dialog.textContent = "";
@@ -93,6 +97,6 @@ submit.addEventListener('click', function(e) {
     document.querySelector('.next').style.display="block";
     document.querySelector('.dot').className +=' active';
   }
-  console.log(url);
+  // console.log(url);
   fetchAPI(url, display_result);
 });
