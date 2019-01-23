@@ -114,7 +114,6 @@ submit.addEventListener('click', function(e) {
     let indicator = document.getElementById("indicator");
     let indicatorElement;
     let slideShowDiv, imageElement, imageSource, textNumber, number, button, author;
-    let dialog = document.getElementById('dialog');
     while (containerSlide.firstChild) {
       containerSlide.removeChild(containerSlide.firstChild);
       indicator.removeChild(indicator.firstChild);
@@ -149,9 +148,7 @@ submit.addEventListener('click', function(e) {
       slideShowDiv.appendChild(button);
       button.setAttribute('id', i);
       button.addEventListener('click', function(e) {
-        dialog.textContent = "";
-        dialog.textContent = "Slide Number " + e.target.id;
-        dialog.showModal();
+        detailsDialog(result,e.target.id);
       });
       /*create indicator*/
       indicatorElement = document.createElement('span');
@@ -194,10 +191,15 @@ function showDivResult(response) {
     divResult.appendChild(title);
     show = document.createElement('button');
     show.textContent = "Show Details";
+    show.setAttribute('id',i);
     divResult.appendChild(show);
+    show.addEventListener('click',function(e){
+      detailsDialog(response,e.target.id);
+    })
   }
 }
 
 let detailsDialog = (response,index)=>{
-
+  let dialog = document.getElementById('dialog');
+        dialog.showModal();
 }
