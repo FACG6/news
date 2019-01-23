@@ -39,7 +39,7 @@ ___
 
 Run this project on your Local Device
 
-its like any github project expect that you have to Get 
+its like any github project expect that you have to  
 Get our ```config.js``` file that contain our API Key form mohammed abu mahadi ( mohammedmh)
 
 
@@ -57,7 +57,6 @@ this prject meant to be a full review about all the lecture and the workshop tha
 * Testing
     * npm
     * tape tap-spec
-    * istanbul 
 * Api
     * Xhr request 
     * how to read api documntaion 
