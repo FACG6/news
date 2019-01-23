@@ -343,3 +343,45 @@ hr {
     margin: 0 15px;
   }
 }
+/* start list of photo  */
+ .source_news{
+   position:absolute;
+   bottom: 50px;
+   left: 100px;
+   color: white;
+  cursor: pointer;
+} 
+
+.results_container{
+  margin: 50px auto;
+  width: 85%;
+}
+.source_result 
+{
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: #DDD;
+  display: inline-block;
+  border-bottom: 1px solid #DDd;
+}
+.source_result img {
+  width: 200px;
+  float: left;
+}
+.btn_source{
+  float: right;
+  margin-right: 50px;
+  margin: 40px;
+  padding: 5px 10px;
+  color: white;
+  background-color:#7c0490;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #9b3beb;
+}
+.title_source{
+padding: 40px;
+display: inline-block;
+
+}
+
+/* end list of photo */
