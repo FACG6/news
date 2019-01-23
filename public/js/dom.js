@@ -113,8 +113,16 @@ submit.addEventListener('click', function(e) {
     let containerSlide = document.getElementById("slideshow");
     let indicator = document.getElementById("indicator");
     let indicatorElement;
+<<<<<<< HEAD
     let slideShowDiv, imageElement, imageSource, textNumber, number, button, author;
+=======
+<<<<<<< HEAD
+    let slideShowDiv,imageElement,imageSource,textNumber,number;
+=======
+    let slideShowDiv,imageElement,imageSource,textNumber,number,button;
+>>>>>>> 462c7988b987ee02b960564cd953fd0e9b4ab57f
     let dialog = document.getElementById('dialog');
+>>>>>>> f66ddcd3fd814eef078252b74a93abb75dabae07
     while (containerSlide.firstChild) {
       containerSlide.removeChild(containerSlide.firstChild);
       indicator.removeChild(indicator.firstChild);

@@ -1,10 +1,6 @@
-if (typeof module !== "undefined") {
-  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-}
-
 function fetchAPI(url, cb) {
   var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = ()=> {
     if (xhr.readyState === 4 && xhr.status === 200) {
       let response = JSON.parse(xhr.responseText);
       cb(response);
@@ -16,36 +12,11 @@ function fetchAPI(url, cb) {
 };
 
 /*get image*/
-
-function getImage(response, i) {
-  return response.articles[i].urlToImage;
-}
-
-function getPostUrl(response, i) {
-  return response.articles[i].url;
-}
-
-function getSourceId(response, i) {
-  return response.articles[i].source.id;
-}
-
-function getSourceName(response, i) {
-  return response.articles[i].source.name;
-}
-
-function getTitel(response, i) {
-  return response.articles[i].title;
-}
-
-
-function getContent(response, i) {
-  return response.articles[i].content;
-}
-
-function publishAt(response, i) {
-  return response.articles[i].publishedAt;
-}
-
+const getImage=(response, i) => response.articles[i].urlToImage;
+const getPostUrl = (response, i) =>response.articles[i].url;
+const getTitel =(response, i) => response.articles[i].title;
+const getContent = (response, i) => response.articles[i].content;
+const publishAt = (response, i) => response.articles[i].publishedAt;
 
 if (typeof module !== "undefined") {
   module.exports = {
@@ -53,8 +24,6 @@ if (typeof module !== "undefined") {
     publishAt,
     getContent,
     getTitel,
-    getAuthor,
-    getSourceId,
     getPostUrl,
     getImage
   };
