@@ -1,16 +1,80 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
-.image{
+body {
   width: 100%;
-  height: 300px;
+  background: #ce9fd4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ce9fd4, #eae6ea);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ce9fd4, #eae6ea);;
 }
-.mySlides{
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 30px;
+
+}
+
+.search {
+  outline: none;
+  border-radius: 7px;
+  width: 225px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #d45fe8;
+  margin-right: 10px;
+  color: black;
+  box-shadow: 2px 2px 5px #4a197373;
+}
+
+.search:focus {
+  border: 1px solid #7c0490;
+}
+
+.select {
+  border: 1px solid #d777e7;
+  background: white;
+  padding: 5px;
+  border-radius: 7px;
+  color: #82478f;
+  outline: none;
+  margin-right: 10px;
+  box-shadow: 2px 2px 5px #4a197373;
+}
+
+.image {
+  width: 100%;
+  height: 400px;
+  box-shadow: 2px 2px 5px #4a197373;
+}
+
+.mySlides {
   display: none;
 }
+
+.indicator {
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 7px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 7px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -19,14 +83,25 @@
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -40,7 +115,9 @@
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  display: none;
 }
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;

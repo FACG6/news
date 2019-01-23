@@ -10,41 +10,33 @@
   </head>
 
   <body>
-  <form>
+  <form class="searchForm">
 
-        <input type="text"  id ="search" placeholder="Enter word" required>
-        <select required id="lang">
-                <option value="">...</option>
+        <input type="text"  id ="search" class="search" placeholder="Enter word" required>
+        <select required id="lang" class="select">
+                <option value=""></option>
             <option value="ar" >Arabic</option>
             <option value="en">English</option>
             <option value="fr">French</option>
             <option value="he">Hebrew</option>
           </select>
-          <select required id="cate">
-             <option value="">...</option>
-             <option value=" business">business</option>
+          <select required id="cate" class="select">
+             <option value=""></option>
+             <option value="business">business</option>
              <option value="health">health</option>
              <option value="science">science</option>
              <option value="sports">sports</option>
           </select>
+          <input type="submit" name="Search" id="submit">
 
     </form>
     <div class="slideShow" id="slideshow">
-
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 2</div>
-          <img class="image" src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-          <div class="description">Image 1</div>
-        </div>
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 2</div>
-          <img class="image" src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
-          <div class="description">Image 2</div>
-        </div>
       </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+      <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+      <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    <div id="indicator" class="indicator">
+    </div>
+    <dialog class="dialog"></dialog>
 
       <script src="js/logic.js"></script>
       <script src="js/dom.js"></script>
