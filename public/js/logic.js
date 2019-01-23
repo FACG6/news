@@ -16,6 +16,7 @@ function fetchAPI(url, cb) {
 };
 
 /*get image*/
+
 function getImage(response, i) {
   return response.articles[i].urlToImage;
 }
@@ -28,8 +29,8 @@ function getSourceId(response, i) {
   return response.articles[i].source.id;
 }
 
-function getAuthor(response, i) {
-  return response.articles[i].author;
+function getSourceName(response, i) {
+  return response.articles[i].source.name;
 }
 
 function getTitel(response, i) {
