@@ -12,12 +12,9 @@
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FACG6/news.git"
-  },
-  "bugs": {
-    "url": "https://github.com/FACG6/news/issues"
-  },
-  "homepage": "https://github.com/FACG6/news#readme"
+
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+
 }
