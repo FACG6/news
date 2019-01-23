@@ -15,9 +15,20 @@ test('test fechAPI function',function(t){
     });
   });
   
+
+  test("test ready State is equal 4",function (test){
+    const expected = 4;
+    logic(url, function(xhr) {
+      actual = xhr.readyState;
+      test.notEqual(actual, expected, "ready State equal 4");
+      test.end();
+    });
+  });
+
+  
 test('test fechAPI function',function(t){
     logic(url,(res)=> {let actual =res.articles[0].urlToImage
-    let  expected = "https://resources.stuff.co.nz/content/dam/images/1/t/k/1/n/u/image.related.StuffLandscapeSixteenByNine.1420x800.1tk192.png/1548205243109.jpg";
+    let  expected = "https://www.prachachat.net/wp-content/uploads/2019/01/businessman-1071758_960_720-2.jpg";
  t.equal(actual,expected,"the page is done ");
  t.end();});
  });
