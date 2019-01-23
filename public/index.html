@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <div class="logo">
+      <a href="#" data-text="News">News</a>
+    </div>
   <form class="searchForm">
 
         <input type="text"  id ="search" class="search" placeholder="Enter word" required>
@@ -26,13 +29,15 @@
              <option value="science">science</option>
              <option value="sports">sports</option>
           </select>
-          <input type="submit" name="Search" id="submit">
+          <input type="submit" name="Search" id="submit" class="btn-search" >
 
     </form>
     <div class="slideShow" id="slideshow">
       </div>
+      
       <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
       <a class="next" onclick="moveSlide(1)">&#10095;</a>
+      <div class="more_Detalis"><button class="btn_more_Detalis">more details</button></div>
     <div id="indicator" class="indicator">
     </div>
     <dialog class="dialog"></dialog>

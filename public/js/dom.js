@@ -50,7 +50,7 @@ submit.addEventListener('click', function(e) {
     let containerSlide = document.getElementById("slideshow");
     let indicator = document.getElementById("indicator");
     let indicatorElement;
-    let slideShowDiv,imageElement,imageSource,textNumber,number,;
+    let slideShowDiv,imageElement,imageSource,textNumber,number;
     while (containerSlide.firstChild) {
       containerSlide.removeChild(containerSlide.firstChild);
       indicator.removeChild(indicator.firstChild);
@@ -83,5 +83,5 @@ submit.addEventListener('click', function(e) {
     document.querySelector('.dot').className +=' active';
   }
   console.log(url);
-  fetch(url, display_result);
+  fetchAPI(url, display_result);
 });
