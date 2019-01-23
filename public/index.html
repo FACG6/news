@@ -33,6 +33,8 @@
              <option value="health">health</option>
              <option value="science">science</option>
              <option value="sports">sports</option>
+             <option value="technology">technology</option>
+             technology
           </select>
           <label for="submit"></label>
 
@@ -40,16 +42,14 @@
 
     </form>
     <div class="clear"></div>
+    
     <div class="slideShow" id="slideshow">
-      </div>
-      
+    </div>
+    
       <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
       <a class="next" onclick="moveSlide(1)">&#10095;</a>
-      <div class="more_Detalis"><button class="btn_more_Detalis">more details</button></div>
     <div id="indicator" class="indicator">
     </div>
-    <div class="sources" id="source_result"></div>
-    <div class="clear"></div>
 
     <dialog class="dialog" id="dialog">
       <div class="content">
@@ -85,6 +85,7 @@
   <button class="close">Close</button>
 
     </dialog>
+    <div class="results_container" id="results_container"></div>
     <script src="js/config.js"></script>
 
       <script src="js/logic.js"></script>

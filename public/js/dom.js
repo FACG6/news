@@ -136,6 +136,7 @@ submit.addEventListener('click', function(e) {
       /*author of the articals*/
       author = document.createElement('a');
       author.textContent = sources[i].name;
+      author.classList.add('source_news');
       author.id = sources[i].id;
       slideShowDiv.appendChild(author);
       author.addEventListener('click', function(e) {
@@ -145,9 +146,13 @@ submit.addEventListener('click', function(e) {
       /*button to show details*/
       button = document.createElement('button');
       button.innerText = "Show Details";
-      slideShowDiv.appendChild(button);
-      button.setAttribute('id', i);
-      button.addEventListener('click', function(e) {
+      let divButton=document.createElement('div');
+      divButton.classList.add('more_Detalis');
+      slideShowDiv.appendChild(divButton);
+      button.classList.add("btn_more_Detalis");
+      divButton.appendChild(button);
+      button.setAttribute('id',i);
+      button.addEventListener('click',function(e){
         detailsDialog(result,e.target.id);
       });
       /*create indicator*/
@@ -162,7 +167,7 @@ submit.addEventListener('click', function(e) {
     document.querySelector('.next').style.display = "block";
     document.querySelector('.dot').className += ' active';
   }
-  console.log(url);
+  // console.log(url);
   fetchAPI(url, display_result);
 });
 
@@ -173,7 +178,7 @@ function displaySource(id) {
 
 function showDivResult(response) {
   console.log(response);
-  let containerSocurces = document.getElementById('source_result');
+  let containerSocurces = document.getElementById('results_container');
   let divResult,imgSource,title,show;
   const sourceLenght = response.articles.length;
   if (sourceLenght > 10)
@@ -183,6 +188,7 @@ function showDivResult(response) {
     divResult.classList.add('source_result');
     containerSocurces.appendChild(divResult);
     imgSource = document.createElement('img');
+    imgSource.classList.add('img_source');
     imgSource.src = getImage(response, i);
     divResult.appendChild(imgSource);
     title = document.createElement('p');
@@ -190,6 +196,7 @@ function showDivResult(response) {
     title.textContent = getTitel(response,i);
     divResult.appendChild(title);
     show = document.createElement('button');
+    show.classList.add('btn_source');
     show.textContent = "Show Details";
     show.setAttribute('id',i);
     divResult.appendChild(show);
