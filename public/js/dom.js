@@ -41,6 +41,10 @@ submit.addEventListener('click', function(e) {
   const searchInput = document.getElementById("search").value;
   const lang = document.getElementById("lang").value;
   const category = document.getElementById("cate").value;
+   if(searchInput ==="" &&lang ==="" && category===""){
+     alert("please fill all field");
+     return ;
+   }
 
   let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=${key}`;
 
