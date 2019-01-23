@@ -6,6 +6,8 @@
     <title>News Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
   </head>
 
   <body>
@@ -13,8 +15,11 @@
       <a href="#" data-text="News">News</a>
     </div>
   <form class="searchForm">
-
-        <input type="text"  id ="search" class="search" placeholder="Enter word" required>
+      <label for="search"  role="progressbar" aria-valuenow="75" 
+      aria-valuemin="0" aria-valuemax="100">
+        <input type="text"  name = "search" id ="search" class="search" placeholder="Enter word" required>
+      </label>
+        
         <select required id="lang" class="select">
                 <option value=""></option>
             <option value="ar" >Arabic</option>
@@ -29,9 +34,12 @@
              <option value="science">science</option>
              <option value="sports">sports</option>
           </select>
-          <input type="submit" name="Search" id="submit" class="btn-search" >
+          <label for="submit"></label>
+
+          <input type="submit" name="Search" id="submit" class="btn-search">
 
     </form>
+    <div class="clear"></div>
     <div class="slideShow" id="slideshow">
       </div>
       
@@ -40,9 +48,43 @@
       <div class="more_Detalis"><button class="btn_more_Detalis">more details</button></div>
     <div id="indicator" class="indicator">
     </div>
-    <dialog class="dialog" id="dialog"></dialog>
+    <div class="clear"></div>
+    <dialog class="dialog" >
+      <div class="content">
+          <div class="title">
+              <h2 id="title">Web news</h2>
+            </div>
+   <div class="divwidth">
+      <img src="https://yt3.ggpht.com/a-/AAuE7mDaIPSwLi2eUtSdUZ0Knhmpfg6vTCe09VKiLw=s900-mo-c-c0xffffffff-rj-k-no" alt="newsphoto">
+      </div>
+       <div class="clear"></div>
+        <hr>
+        <div class="discription">
+            <div class="info">
+          
+                <p id="source"><span>Source :</span>link</p>
+                
+                <p id="public"><span>publish at :</span>link</p>
+              </div>
+          <p>
+            <span>Descrption<br></span>
+            this is the  discription line 
+            that will make the html line going 
+            to work in many way  this is the  discription line 
+            that will make the html line going 
+            to work in many way
+          </p>
+        </div>
+      </div>
+      <iframe id="inlineFrameExample"
+      title="Inline Frame Example"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+  </iframe>
+  <button class="close">Close</button>
 
-      <script src="js/config.js"></script>
+    </dialog>
+    <script src="js/config.js"></script>
+
       <script src="js/logic.js"></script>
       <script src="js/dom.js"></script>
   </body>
