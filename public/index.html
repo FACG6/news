@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <div class="logo">
+      <a href="#" data-text="News">News</a>
+    </div>
   <form class="searchForm">
       <label for="search"  role="progressbar" aria-valuenow="75" 
       aria-valuemin="0" aria-valuemax="100">
@@ -33,17 +36,20 @@
           </select>
           <label for="submit"></label>
 
-          <input type="submit" name="Search" id="submit">
+          <input type="submit" name="Search" id="submit" class="btn-search">
 
     </form>
+    <div class="clear"></div>
     <div class="slideShow" id="slideshow">
       </div>
+      
       <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
       <a class="next" onclick="moveSlide(1)">&#10095;</a>
+      <div class="more_Detalis"><button class="btn_more_Detalis">more details</button></div>
     <div id="indicator" class="indicator">
     </div>
     <div class="clear"></div>
-    <dialog class="dialog" open>
+    <dialog class="dialog" >
       <div class="content">
           <div class="title">
               <h2 id="title">Web news</h2>
@@ -77,6 +83,8 @@
   <button class="close">Close</button>
 
     </dialog>
+    <script src="js/config.js"></script>
+
       <script src="js/logic.js"></script>
       <script src="js/dom.js"></script>
   </body>
