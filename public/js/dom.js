@@ -42,7 +42,7 @@ submit.addEventListener('click', function(e) {
   const lang = document.getElementById("lang").value;
   const category = document.getElementById("cate").value;
 
-  let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=cf55683a37b348acb635772cba756300`;
+  let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=${key}`;
 
   function display_result(result) {
     console.log(result);
@@ -50,7 +50,12 @@ submit.addEventListener('click', function(e) {
     let containerSlide = document.getElementById("slideshow");
     let indicator = document.getElementById("indicator");
     let indicatorElement;
+<<<<<<< HEAD
     let slideShowDiv,imageElement,imageSource,textNumber,number;
+=======
+    let slideShowDiv,imageElement,imageSource,textNumber,number,button;
+    let dialog = document.getElementById('dialog');
+>>>>>>> f66ddcd3fd814eef078252b74a93abb75dabae07
     while (containerSlide.firstChild) {
       containerSlide.removeChild(containerSlide.firstChild);
       indicator.removeChild(indicator.firstChild);
@@ -62,7 +67,7 @@ submit.addEventListener('click', function(e) {
       containerSlide.appendChild(slideShowDiv);
       imageElement = document.createElement('img');
       imageElement.classList.add('image');
-      imageSource = result.articles[i].urlToImage;
+      imageSource = getImage(result,i);
       imageElement.src = imageSource;
       slideShowDiv.appendChild(imageElement);
       textNumber = document.createElement('div');
@@ -70,6 +75,16 @@ submit.addEventListener('click', function(e) {
       number = i + 1;
       textNumber.innerText = `${number}/${lengthResult}`;
       slideShowDiv.appendChild(textNumber);
+      /*button to show details*/
+      button = document.createElement('button');
+      button.innerText = "Show Details";
+      slideShowDiv.appendChild(button);
+      button.setAttribute('id',i);
+      button.addEventListener('click',function(e){
+        dialog.textContent = "";
+        dialog.textContent = "Slide Number " + e.target.id ;
+        dialog.showModal();
+      });
       /*create indicator*/
       indicatorElement = document.createElement('span');
       indicatorElement.classList.add('dot');
