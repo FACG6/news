@@ -42,7 +42,7 @@ submit.addEventListener('click', function(e) {
   const lang = document.getElementById("lang").value;
   const category = document.getElementById("cate").value;
 
-  let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=cf55683a37b348acb635772cba756300`;
+  let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=${key}`;
 
   function display_result(result) {
     console.log(result);
