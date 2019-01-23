@@ -50,7 +50,8 @@ submit.addEventListener('click', function(e) {
     let containerSlide = document.getElementById("slideshow");
     let indicator = document.getElementById("indicator");
     let indicatorElement;
-    let slideShowDiv,imageElement,imageSource,textNumber,number,;
+    let slideShowDiv,imageElement,imageSource,textNumber,number,button;
+    let dialog = document.getElementById('dialog');
     while (containerSlide.firstChild) {
       containerSlide.removeChild(containerSlide.firstChild);
       indicator.removeChild(indicator.firstChild);
@@ -62,7 +63,7 @@ submit.addEventListener('click', function(e) {
       containerSlide.appendChild(slideShowDiv);
       imageElement = document.createElement('img');
       imageElement.classList.add('image');
-      imageSource = result.articles[i].urlToImage;
+      imageSource = getImage(result,i);
       imageElement.src = imageSource;
       slideShowDiv.appendChild(imageElement);
       textNumber = document.createElement('div');
@@ -70,6 +71,16 @@ submit.addEventListener('click', function(e) {
       number = i + 1;
       textNumber.innerText = `${number}/${lengthResult}`;
       slideShowDiv.appendChild(textNumber);
+      /*button to show details*/
+      button = document.createElement('button');
+      button.innerText = "Show Details";
+      slideShowDiv.appendChild(button);
+      button.setAttribute('id',i);
+      button.addEventListener('click',function(e){
+        dialog.textContent = "";
+        dialog.textContent = "Slide Number " + e.target.id ;
+        dialog.showModal();
+      });
       /*create indicator*/
       indicatorElement = document.createElement('span');
       indicatorElement.classList.add('dot');
@@ -83,5 +94,5 @@ submit.addEventListener('click', function(e) {
     document.querySelector('.dot').className +=' active';
   }
   console.log(url);
-  fetch(url, display_result);
+  fetchAPI(url, display_result);
 });
