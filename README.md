@@ -12,9 +12,10 @@ and you cna see more details and see the original website
 and you can search about what are you looking for 
 but you have to make 3 choices 
 
-# ****language ****
-# ****catagaoire ****
-# ****the word that user insert in the input section  ****
+##
+ * language 
+*   catagaoire
+* the word that user insert in the input section  
 
 ___
 
@@ -46,19 +47,19 @@ Get our ```config.js``` file that contain our API Key form mohammed abu mahadi (
 this prject meant to be a full review about all the lecture and the workshop that we take in the past three week and the subject is 
 
 * css 
-    *responsive website 
-    *first-desgin website
-    *flex-box
+    * responsive website 
+    * first-desgin website
+    * flex-box
 * js 
-    *ES6
-    *call back function 
-    *dom manpulation 
+    * ES6
+    * call back function 
+    * dom manpulation 
 * Testing
-    *npm
-    *tape tap-spec
-    *istanbul 
+    * npm
+    * tape tap-spec
+    * istanbul 
 * Api
-    *Xhr request 
-    *how to read api documntaion 
-    *use complex Api's (more than one )
+    * Xhr request 
+    * how to read api documntaion 
+    * use complex Api's (more than one )
  
