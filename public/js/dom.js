@@ -41,7 +41,10 @@ submit.addEventListener('click', function(e) {
   const searchInput = document.getElementById("search").value;
   const lang = document.getElementById("lang").value;
   const category = document.getElementById("cate").value;
-
+  if(searchInput ==="" &&lang ==="" && category===""){
+    alert("please fill all field");
+    return ;
+  }
   let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=${key}`;
 
   function display_result(result) {
@@ -208,5 +211,25 @@ function showDivResult(response) {
 
 let detailsDialog = (response,index)=>{
   let dialog = document.getElementById('dialog');
+  let close = document.getElementById('close');
+  let title = document.getElementById('title');
+  title.textContent = getTitel(response,index);
+  let imgDetails = document.getElementById('img_details');
+  imgDetails.src = getImage(response,index);
+  let publish = document.getElementById('public');
+  publish.textContent = publishAt(response,index);
+  let content = document.getElementById('content');
+  content.textContent = getContent(response,index);
+  let iframe = document.getElementById('inlineFrameExample');
+  iframe.src = getPostUrl(response,index);
+
         dialog.showModal();
+  close.addEventListener('click',()=>{
+    title.textContent = "";
+    imgDetails.src = "";
+    iframe.src = "";
+    publish.textContent = "";
+    content.textContent = "";
+    dialog.close();
+  })
 }
