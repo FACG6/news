@@ -1,7 +1,5 @@
 
-if (typeof module !== "undefined") {
-    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-}
+ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 function fetchAPI(url,cb){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
@@ -16,7 +14,7 @@ function fetchAPI(url,cb){
 };
 
 
-if (typeof module !== "undefined") {
+
     module.exports = fetchAPI;
-  }
+
 
