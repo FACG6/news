@@ -40,11 +40,21 @@ function getTitel(response, i) {
 function getContent(response, i) {
   return response.articles[i].content;
 }
-function publishAt(response,i){
+
+function publishAt(response, i) {
   return response.articles[i].publishedAt;
 }
 
 
 if (typeof module !== "undefined") {
-  module.exports = fetchAPI;
+  module.exports = {
+    fetchAPI,
+    publishAt,
+    getContent,
+    getTitel,
+    getAuthor,
+    getSourceId,
+    getPostUrl,
+    getImage
+  };
 }
