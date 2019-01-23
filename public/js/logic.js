@@ -1,16 +1,22 @@
 
-function fetch(url,cb){
-
+if (typeof module !== "undefined") {
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+}
+function fetchAPI(url,cb){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4 && xhr.status === 200){
-            console.log(status);
-             var result = JSON.parse(xhr.responseText);
-         cb(result);
-        }
+    if(xhr.readyState === 4 && xhr.status === 200){
+        var response =  JSON.parse(xhr.responseText);
+         cb(response);
+    }
     }
     xhr.open("GET",url,true);
     xhr.send();
     
 };
+
+
+if (typeof module !== "undefined") {
+    module.exports = fetchAPI;
+  }
 
