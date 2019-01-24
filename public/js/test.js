@@ -1,8 +1,5 @@
 const test = require('tape');
-var logic = require("./logic.js")
-const key = require("./config.js")
-const url = `https://newsapi.org/v2/top-headlines?language=en&category=business&apiKey=${key}`;
-
+const logic = require("./logic.js")
 const response = {
   "status": "ok",
   "totalResults": 4579,

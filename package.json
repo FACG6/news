@@ -13,6 +13,6 @@
     "tape": "^4.9.2"
   },
   "dependencies": {
-    "xmlhttprequest": "^1.8.0"
+  
   }
 }

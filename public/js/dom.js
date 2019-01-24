@@ -1,19 +1,19 @@
 /*make slideShow*/
-var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
-function moveSlide(n) {
+let moveSlide = (n) => {
   showSlides(slideIndex += n);
 }
 
-function showSlide(n) {
+let showSlide = (n) => {
   showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+function showSlides  (n)  {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
   if (slides.length != 0) {
     if (n > slides.length) {
       slideIndex = 1
@@ -36,19 +36,18 @@ function showSlides(n) {
 
 /*when click on the search button*/
 let submit = document.getElementById("submit");
-submit.addEventListener('click', function(e) {
+submit.addEventListener('click', (e) => {
   e.preventDefault();
   const searchInput = document.getElementById("search").value;
   const lang = document.getElementById("lang").value;
   const category = document.getElementById("cate").value;
-  if(searchInput ==="" &&lang ==="" && category===""){
-    alert("please fill all field");
-    return ;
+  if (!(isNaN(searchInput) && isNaN(lang) && isNaN(category))) {
+    return;
   }
   let url = `https://newsapi.org/v2/top-headlines?q=${searchInput}&language=${lang}&category=${category}&apiKey=${key}`;
 
-  function display_result(result) {
-    /*the source of the news*/
+  let display_result = (result) => {
+    /*t*he source of the news*/
     let sources = [{
       id: 'abc-news',
       name: 'ABC News'
@@ -117,10 +116,8 @@ submit.addEventListener('click', function(e) {
     let indicator = document.getElementById("indicator");
     let indicatorElement;
     let slideShowDiv, imageElement, imageSource, textNumber, number, button, author;
-    while (containerSlide.firstChild) {
-      containerSlide.removeChild(containerSlide.firstChild);
-      indicator.removeChild(indicator.firstChild);
-    }
+    deleteChild(containerSlide);
+    deleteChild(indicator);
     for (let i = 0; i < lengthResult; i++) {
       slideShowDiv = document.createElement('div');
       slideShowDiv.classList.add("mySlides");
@@ -142,21 +139,20 @@ submit.addEventListener('click', function(e) {
       author.classList.add('source_news');
       author.id = sources[i].id;
       slideShowDiv.appendChild(author);
-      author.addEventListener('click', function(e) {
-        //console.log(e.target.id);
+      author.addEventListener('click', function (e) {
         displaySource(e.target.id);
       })
       /*button to show details*/
       button = document.createElement('button');
       button.innerText = "Show Details";
-      let divButton=document.createElement('div');
+      let divButton = document.createElement('div');
       divButton.classList.add('more_Detalis');
       slideShowDiv.appendChild(divButton);
       button.classList.add("btn_more_Detalis");
       divButton.appendChild(button);
-      button.setAttribute('id',i);
-      button.addEventListener('click',function(e){
-        detailsDialog(result,e.target.id);
+      button.setAttribute('id', i);
+      button.addEventListener('click', function (e) {
+        detailsDialog(result, e.target.id);
       });
       /*create indicator*/
       indicatorElement = document.createElement('span');
@@ -174,16 +170,16 @@ submit.addEventListener('click', function(e) {
   fetchAPI(url, display_result);
 });
 
-function displaySource(id) {
+let displaySource = (id) => {
   let url = `https://newsapi.org/v2/top-headlines?sources=${id}&apiKey=cf55683a37b348acb635772cba756300`;
   fetchAPI(url, showDivResult);
 }
 
-function showDivResult(response) {
-  console.log(response);
+let showDivResult=(response)=> {
   let containerSocurces = document.getElementById('results_container');
-  let divResult,imgSource,title,show;
+  let divResult, imgSource, title, show;
   const sourceLenght = response.articles.length;
+  deleteChild(containerSocurces);
   if (sourceLenght > 10)
     sourceLenght = 10;
   for (let i = 0; i < sourceLenght; i++) {
@@ -196,35 +192,35 @@ function showDivResult(response) {
     divResult.appendChild(imgSource);
     title = document.createElement('p');
     title.classList.add('title_source');
-    title.textContent = getTitel(response,i);
+    title.textContent = getTitel(response, i);
     divResult.appendChild(title);
     show = document.createElement('button');
     show.classList.add('btn_source');
     show.textContent = "Show Details";
-    show.setAttribute('id',i);
+    show.setAttribute('id', i);
     divResult.appendChild(show);
-    show.addEventListener('click',function(e){
-      detailsDialog(response,e.target.id);
+    show.addEventListener('click', function (e) {
+      detailsDialog(response, e.target.id);
     })
   }
 }
 
-let detailsDialog = (response,index)=>{
+let detailsDialog = (response, index) => {
   let dialog = document.getElementById('dialog');
   let close = document.getElementById('close');
   let title = document.getElementById('title');
-  title.textContent = getTitel(response,index);
+  title.textContent = getTitel(response, index);
   let imgDetails = document.getElementById('img_details');
-  imgDetails.src = getImage(response,index);
+  imgDetails.src = getImage(response, index);
   let publish = document.getElementById('public');
-  publish.textContent = publishAt(response,index);
+  publish.textContent = publishAt(response, index);
   let content = document.getElementById('content');
-  content.textContent = getContent(response,index);
+  content.textContent = getContent(response, index);
   let iframe = document.getElementById('inlineFrameExample');
-  iframe.src = getPostUrl(response,index);
+  iframe.src = getPostUrl(response, index);
 
-        dialog.showModal();
-  close.addEventListener('click',()=>{
+  dialog.showModal();
+  close.addEventListener('click', () => {
     title.textContent = "";
     imgDetails.src = "";
     iframe.src = "";
@@ -232,4 +228,10 @@ let detailsDialog = (response,index)=>{
     content.textContent = "";
     dialog.close();
   })
+}
+
+let deleteChild = (parent) => {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
