@@ -1,6 +1,6 @@
 ## ****our website link****
 
-www.google.com
+https://facg6.github.io/news/
 
 
 ## **NEWS WEBSITE**
